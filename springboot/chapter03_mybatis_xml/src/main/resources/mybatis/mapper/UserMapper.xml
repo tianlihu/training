@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.tianlihu.mapper.UserMapper">
+    <resultMap id="BaseResultMap" type="com.tianlihu.entity.User">
+        <id column="id" property="id" jdbcType="BIGINT"/>
+        <result column="name" property="name" jdbcType="VARCHAR"/>
+        <result column="password" property="password" jdbcType="VARCHAR"/>
+        <result column="sex" property="sex" javaType="com.tianlihu.constants.Sex"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        id, name, password, sex
+    </sql>
+
+    <select id="findAll" resultMap="BaseResultMap">
+        SELECT
+        <include refid="Base_Column_List"/>
+        FROM sys_user
+    </select>
+
+    <select id="findById" parameterType="java.lang.Long" resultMap="BaseResultMap">
+        SELECT
+        <include refid="Base_Column_List"/>
+        FROM sys_user
+        WHERE id=#{id}
+    </select>
+
+    <insert id="save" parameterType="com.tianlihu.entity.User">
+        INSERT INTO sys_user (name,password,sex)
+        VALUES (#{name}, #{password}, #{sex})
+    </insert>
+
+    <update id="update" parameterType="com.tianlihu.entity.User">
+        UPDATE sys_user
+        <set>
+            <if test="name != null">name=#{name},</if>
+            <if test="password != null">password=#{password},</if>
+            <if test="sex != null">sex=#{sex},</if>
+        </set>
+        WHERE
+        id=#{id}
+    </update>
+
+    <delete id="delete" parameterType="java.lang.Long">
+        DELETE FROM sys_user WHERE id=#{id}
+    </delete>
+</mapper>
