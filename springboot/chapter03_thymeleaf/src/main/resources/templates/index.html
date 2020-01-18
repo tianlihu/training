@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>首页</title>
+    <!-- JS导入 -->
+    <script th:src="@{/js/index.js}" charset="UTF-8"></script>
+</head>
+<body>
+Hello world<br />
+
+用户1：<br />
+姓名：<span th:text="${name}"></span><br />
+年龄：<span th:text="${age}"></span><br />
+
+<hr>
+
+用户2：<br />
+编号：<span th:text="${user.id}"></span><br />
+姓名：<span th:text="${user.name}"></span><br />
+年龄：<span th:text="${user.age}"></span><br />
+
+
+</body>
+</html>
