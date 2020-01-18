@@ -1,0 +1,26 @@
+spring:
+  profiles:
+    include: dev1,dev2,dev3
+debug: true
+
+---
+
+person:
+  id: 1
+spring:
+  profiles: dev1
+
+---
+
+person:
+  id: 2
+  name: 张三
+spring:
+  profiles: dev2
+
+---
+
+person:
+  age: 20
+spring:
+  profiles: dev3
