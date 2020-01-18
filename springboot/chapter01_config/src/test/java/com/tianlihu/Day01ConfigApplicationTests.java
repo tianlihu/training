@@ -1,0 +1,13 @@
+package com.tianlihu;
+
+import org.junit.jupiter.api.Test;
+import org.springframework.boot.test.context.SpringBootTest;
+
+@SpringBootTest
+class Day01ConfigApplicationTests {
+
+    @Test
+    void contextLoads() {
+    }
+
+}
