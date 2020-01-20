@@ -1,0 +1,10 @@
+server:
+  port: 8090
+
+spring:
+  application:
+    name: spring-boot-admin-server
+  security:
+    user:
+      name: admin
+      password: 123456
