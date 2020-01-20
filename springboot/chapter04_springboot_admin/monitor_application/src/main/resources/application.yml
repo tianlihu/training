@@ -1,0 +1,17 @@
+spring:
+  application:
+    name: spring-boot-admin-application4
+  boot:
+    admin:
+      client:
+        url: http://localhost:8090/ #spring admin server访问地址
+
+# 开放所有endpoint，实际生产根据自身需要开放，出于安全考虑不建议全部开放。
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+
+server:
+  port: 8094
