@@ -72,7 +72,7 @@
                         <groupId>mysql</groupId>
                         <artifactId>mysql-connector-java</artifactId>
                         <!-- 这个版本号一定要写, Maven还是有BUG的 -->
-                        <version>8.0.19</version>
+                        <version>8.0.28</version>
                     </dependency>
                 </dependencies>
                 <configuration>
